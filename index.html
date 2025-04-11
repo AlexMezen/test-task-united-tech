@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="assets/Logo-removebg-preview.png" alt="Logo" class="logo" />
+      <div class="header-right">
+        <a href="#" class="account-link">Already have an account?</a>
+        <button class="login-button">Sign in</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="survey-container" id="step-one">
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+
+        <h1 class="survey-title">Glad you're here!</h1>
+
+        <div class="wrapper-car-img">
+          <div class="image-carousel">
+            <div class="carousel-images">
+              <div class="carousel-image">
+                <img src="assets/1.png" alt="Option 1" />
+              </div>
+              <div class="carousel-image">
+                <img src="assets/2.png" alt="Option 2" />
+              </div>
+              <div class="carousel-image">
+                <img src="assets/3.png" alt="Option 3" />
+              </div>
+              <div class="carousel-image">
+                <img src="assets/4.png" alt="Option 4" />
+              </div>
+              <div class="carousel-image">
+                <img src="assets/5.png" alt="Option 5" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="option-subtitle">Select your sex</h2>
+
+        <div class="options-container">
+          <div class="option" onclick="selectOption(this, 'left')">
+            <img src="assets/img1.png" alt="Left Option" />
+            <p class="option-text">Male</p>
+          </div>
+          <div class="option" onclick="selectOption(this, 'right')">
+            <img src="assets/img2.png" alt="Right Option" />
+            <p class="option-text">Female</p>
+          </div>
+        </div>
+
+        <button class="continue-btn" id="continue-btn">
+          CONTINUE
+          <svg
+            class="arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="survey-container" id="step-two" style="display: none">
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+
+        <h1 class="survey-title">What name should users call you?</h1>
+
+        <div class="input-container">
+          <input
+            type="text"
+            class="custom-input"
+            placeholder="Type your username"
+            id="name-input"
+          />
+          <p class="input-help-text">You don’t have to use your real name – feel free to use a nickname. You can change it anytime.</p>
+        </div>
+
+        <button class="continue-btn" id="continue-btn-step-two">
+          CONTINUE
+          <svg
+            class="arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+<div class="survey-block" id="step-three" style="display: none">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <h1 class="survey-title">Select your age preference for women</h1>
+  
+  <div class="survey-row">
+    <div class="survey-row-inner dual-inputs">
+      <div class="survey-field-wrapper survey-field-half">
+        <div class="survey-dropdown-container">
+          <input type="text" class="survey-field" placeholder="From" id="number-from" readonly />
+          <div class="survey-dropdown-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="survey-dropdown-menu" id="from-dropdown">
+          </div>
+        </div>
+      </div>
+      <div class="survey-field-wrapper survey-field-half">
+        <div class="survey-dropdown-container">
+          <input type="text" class="survey-field" placeholder="To" id="number-to" readonly />
+          <div class="survey-dropdown-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="survey-dropdown-menu" id="to-dropdown">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="survey-row">
+    <h2 class="option-subtitle">What is your age?</h2>
+    <div class="survey-row-inner triple-inputs">
+      <div class="survey-field-wrapper survey-field-third">
+        <div class="survey-dropdown-container">
+          <input type="text" class="survey-field" placeholder="Month" id="birth-month" readonly />
+          <div class="survey-dropdown-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="survey-dropdown-menu" id="month-dropdown">
+          </div>
+        </div>
+      </div>
+      <div class="survey-field-wrapper survey-field-third">
+        <div class="survey-dropdown-container">
+          <input type="text" class="survey-field" placeholder="Day" id="birth-day" readonly />
+          <div class="survey-dropdown-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="survey-dropdown-menu" id="day-dropdown">
+          </div>
+        </div>
+      </div>
+      <div class="survey-field-wrapper survey-field-third">
+        <div class="survey-dropdown-container">
+          <input type="text" class="survey-field" placeholder="Year" id="birth-year" readonly />
+          <div class="survey-dropdown-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="survey-dropdown-menu" id="year-dropdown">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="survey-help-text">By proceeding, you confirm that you are fully legally capable of using this website and are at least 18 years old.</p>
+  </div>
+  
+  <button class="continue-btn" id="continue-btn-step-three">
+    CONTINUE
+    <svg class="survey-continue-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </button>
+</div>
+<div class="survey-container" id="step-four" style="display: none">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <h1 class="survey-title">What kind of content do you enjoy? 👀</h1>
+  <div class="options-container mb-10 mt-10">
+    <div class="option" onclick="selectOption(this, 'left')">
+      <img src="assets/img3.png" alt="Left Option" />
+      <p class="option-text">Hot</p>
+    </div>
+    <div class="option" onclick="selectOption(this, 'right')">
+      <img src="assets/img4.png" alt="Right Option" />
+      <p class="option-text">Trendy</p>
+    </div>
+  </div>
+  <h2 class="option-subtitle">What is your email address?</h2>
+
+  <div class="input-container">
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Type your email"
+      id="name-input"
+      required
+    />
+    <p class="input-help-text">Email is required for registration.</p>
+  </div>
+
+  <button class="continue-btn" id="continue-btn-step-four">
+    CONTINUE
+    <svg
+      class="arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </button>
+</div>
+<div class="survey-container" id="step-five" style="display: none">
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+
+  <h1 class="survey-title">Create your password</h1>
+  <div class="input-container">
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Your password"
+      id="name-input"
+      required
+    />
+  </div>
+  <div class="input-container">
+    <input
+      type="text"
+      class="custom-input"
+      placeholder="Confirm password"
+      id="name-input"
+      required
+    />
+    <p class="input-help-text">Passwords must be at least 8 characters long. You can recover passwords at any time using the email address you provided.</p>
+  </div>
+
+ 
+
+  <button class="continue-btn" id="continue-btn-step-five">
+    CONTINUE
+    <svg
+      class="arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </button>
+</div>
+<div class="survey-container" id="step-six" style="display: none">
+ <img class="final-img" src="assets/img5.png" alt="">
+
+  <h1 class="survey-title">Thanks for your answers!</h1>
+ <h3 class="option-subtitle">Please check the box below to accept our rules. You’re all set!</h3>
+ <div class="input-container">
+  <div class="checkbox-wrapper">
+    <input type="checkbox" id="agreement" class="hidden-checkbox">
+    <div class="custom-checkbox">
+      <svg class="check-arrow" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <path d="M5 12l5 5 9-9"/>
+      </svg>
+    </div>
+    <p class="input-help-text">I have read, understand and agree to Terms of Use, Privacy Policy, Cookie Policy, Billing & Refund Policy, Disclosures & Disclaimers</p>
+  </div>
+</div>
+  <button class="continue-btn" id="continue-btn-step-six">
+    Join Now
+    <svg
+      class="arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </button>
+</div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms of Use</a>
+        <a href="#" class="footer-link">Billing policy</a>
+        <a href="#" class="footer-link">Cookie Policy</a>
+        <a href="#" class="footer-link">Refund Policy</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Risks Notice</a>
+        <a href="#" class="footer-link">Disclosures and Disclaimers</a>
+        <a href="#" class="footer-link">Contact Us</a>
+      </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookie-banner">
+      <div class="cookie-text">
+        We use cookies to make your experience better! If you continue to use
+        this site we will assume you are happy with it.
+      </div>
+      <div class="cookie-buttons">
+        <button class="cookie-button" id="accept-cookies">Sign in</button>
+      </div>
+    </div>
+
+    <script>
+   
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
