@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("continue-btn")
     .addEventListener("click", function () {
       const selectedOption = localStorage.getItem("selectedOption");
-      if (selectedOption) {
-        console.log("Selected option:", selectedOption);
 
         document.getElementById("step-one").style.display = "none";
         document.getElementById("step-two").style.display = "flex";
@@ -24,16 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".header-right").style.display = "none";
 
         document.querySelector(".footer").style.display = "none";
-      }
     });
 
   document
     .getElementById("continue-btn-step-two")
     .addEventListener("click", function () {
-      const nameInput = document.getElementById("name-input").value;
-        console.log("Name entered:", nameInput);
-        localStorage.setItem("userName", nameInput);
-
         document.getElementById("step-two").style.display = "none";
         document.getElementById("step-three").style.display = "flex";
     });
